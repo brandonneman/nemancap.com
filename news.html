@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News · Neman Capital</title>
+<meta name="description" content="News from Neman Capital's venture portfolio, private equity businesses and real estate.">
+<link rel="canonical" href="https://www.nemancap.com/news.html">
+<meta property="og:site_name" content="Neman Capital">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.nemancap.com/news.html">
+<meta property="og:title" content="News · Neman Capital">
+<meta property="og:description" content="News from Neman Capital's venture portfolio, private equity businesses and real estate.">
+<meta property="og:image" content="https://www.nemancap.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --cream: #F5F0EB; --warm-white: #FAF8F5; --sand: #E8E0D6; --stone: #C4B9AD;
+  --charcoal: #2A2622; --dark: #1A1714; --olive: #6B6455;
+  --gold: #C4A265; --gold-muted: #B8A07A;
+  --text: #2A2622; --text-light: #7A7168;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Karla', 'Helvetica Neue', sans-serif;
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); color: var(--text); background: var(--warm-white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+.nav.scrolled { mix-blend-mode: normal; background: rgba(250,248,245,0.92); backdrop-filter: blur(20px); padding: 18px 48px; }
+.nav.scrolled .nav-logo, .nav.scrolled .nav-links a, .nav.scrolled .nav-cta { color: var(--charcoal); }
+.nav-logo { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; letter-spacing: 0.25em; text-transform: uppercase; color: #fff; transition: color 0.4s; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400; color: #fff; transition: opacity 0.3s, color 0.4s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: currentColor; transition: width 0.3s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { opacity: 0.7; }
+.nav-cta { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: #fff; transition: color 0.4s; }
+.menu-toggle { display: none; color: #fff; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.4s; }
+.nav.scrolled .menu-toggle { color: var(--charcoal); }
+.section-tag { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; }
+
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-family: var(--serif); font-size: 0.9rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; transition: color 0.3s; }
+.footer-links a:hover { color: rgba(255,255,255,0.6); }
+.footer-copy { font-size: 0.65rem; letter-spacing: 0.05em; }
+@media (max-width: 1024px) { .nav { padding: 24px 32px; } .nav.scrolled { padding: 16px 32px; } }
+@media (max-width: 768px) { .nav { padding: 20px; } .nav-links { display: none; } .nav-cta { display: none; } .menu-toggle { display: block; } .footer-inner { flex-direction: column; gap: 20px; text-align: center; } .footer-links { flex-wrap: wrap; justify-content: center; } }
+.mobile-menu { position: fixed; inset: 0; z-index: 200; background: var(--dark); display: flex; flex-direction: column; justify-content: center; padding: 48px; opacity: 0; pointer-events: none; transition: opacity 0.4s; }
+.mobile-menu.open { opacity: 1; pointer-events: all; }
+.mobile-menu-close { position: absolute; top: 24px; right: 24px; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+.mobile-menu a { display: block; font-family: var(--serif); font-size: 2rem; font-weight: 300; color: #fff; padding: 12px 0; transition: color 0.3s; }
+.mobile-menu a:hover { color: var(--gold-muted); }
+
+
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; transition: all 0.5s cubic-bezier(0.22,1,0.36,1); mix-blend-mode: difference; }
+/* News */
+.news-hero { background: var(--dark); color: var(--cream); padding: 200px 48px 96px; position: relative; }
+.news-hero .section-tag { color: var(--gold); }
+.news-hero h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(3rem,7vw,6rem); line-height: 1; letter-spacing: -0.01em; margin-top: 20px; }
+.news-hero h1 em { font-style: italic; color: var(--gold-muted); }
+.news-hero p { max-width: 520px; margin-top: 28px; color: var(--stone); font-weight: 300; line-height: 1.8; font-size: 0.95rem; }
+.news-hero .back { display: inline-block; margin-top: 40px; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); border-bottom: 1px solid var(--olive); padding-bottom: 4px; }
+.news-hero .back:hover { color: var(--cream); }
+.news-wrap { max-width: 1120px; margin: 0 auto; padding: 72px 48px 140px; }
+.news-filters { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 28px; border-bottom: 1px solid var(--sand); }
+.news-tabs { display: flex; gap: 28px; flex-wrap: wrap; }
+.news-tabs button { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); padding-bottom: 6px; border-bottom: 1px solid transparent; transition: color .3s, border-color .3s; }
+.news-tabs button:hover { color: var(--charcoal); }
+.news-tabs button.active { color: var(--charcoal); border-bottom-color: var(--gold); }
+.news-select { font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--charcoal); background: transparent; border: 1px solid var(--sand); padding: 10px 36px 10px 14px; appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg,transparent 50%,var(--olive) 50%),linear-gradient(135deg,var(--olive) 50%,transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px; background-repeat: no-repeat; border-radius: 0; }
+.news-month { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--gold-muted); margin: 56px 0 4px; }
+.news-item { display: grid; grid-template-columns: 140px 1fr 160px; gap: 32px; padding: 34px 0; border-bottom: 1px solid var(--sand); align-items: baseline; transition: background .3s; }
+.news-item:hover h3 { color: var(--olive); }
+.news-date { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-light); }
+.news-meta { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.news-meta span { color: var(--stone); margin: 0 8px; }
+.news-item h3 { font-family: var(--serif); font-weight: 400; font-size: 1.75rem; line-height: 1.2; color: var(--charcoal); transition: color .3s; }
+.news-item p { margin-top: 12px; color: var(--text-light); font-weight: 300; line-height: 1.75; font-size: 0.95rem; max-width: 620px; }
+.news-src { text-align: right; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--olive); }
+.news-src::after { content: ' \2197'; }
+.news-empty { padding: 80px 0; text-align: center; font-family: var(--serif); font-style: italic; font-size: 1.3rem; color: var(--text-light); }
+@media (max-width: 768px) {
+  .news-hero { padding: 150px 24px 64px; }
+  .news-wrap { padding: 48px 24px 100px; }
+  .news-item { grid-template-columns: 1fr; gap: 10px; padding: 28px 0; }
+  .news-item h3 { font-size: 1.45rem; }
+  .news-src { text-align: left; }
+  .news-select { width: 100%; }
+}
+
+</style>
+</head>
+<body>
+<nav class="nav scrolled" id="nav">
+  <a href="/" class="nav-logo">Neman Capital</a>
+  <ul class="nav-links">
+    <li><a href="/#philosophy">About</a></li>
+    <li><a href="/#real-estate">Real Estate</a></li>
+    <li><a href="/#private-equity">Private Equity</a></li>
+    <li><a href="/#portfolio">Venture</a></li>
+    <li><a href="/#principals">Principals</a></li>
+    <li><a href="/news.html" aria-current="page">News</a></li>
+  </ul>
+  <a href="/#contact" class="nav-cta">Inquire</a>
+  <button class="menu-toggle" onclick="document.querySelector(&#39;.mobile-menu&#39;).classList.add(&#39;open&#39;)">Menu</button>
+</nav>
+
+<div class="mobile-menu">
+  <button class="mobile-menu-close" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Close</button>
+  <a href="/#philosophy" onclick="this.parentElement.classList.remove(&#39;open&#39;)">About</a>
+  <a href="/#real-estate" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Real Estate</a>
+  <a href="/#private-equity" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Private Equity</a>
+  <a href="/#portfolio" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Venture</a>
+  <a href="/#principals" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Principals</a>
+  <a href="/news.html" onclick="this.parentElement.classList.remove(&#39;open&#39;)">News</a>
+  <a href="/#contact" onclick="this.parentElement.classList.remove(&#39;open&#39;)">Inquire</a>
+</div>
+
+<header class="news-hero">
+  <p class="section-tag">Neman Capital</p>
+  <h1>News &amp; <em>Notes</em></h1>
+  <p>Milestones across our venture portfolio, private equity businesses and real estate, selected from public reporting.</p>
+  <a href="/" class="back">&larr; Back to Neman Capital</a>
+</header>
+
+<main class="news-wrap">
+  <div class="news-filters">
+    <div class="news-tabs" role="tablist">
+      <button class="active" data-cat="All">All</button>
+      <button data-cat="Venture">Venture</button>
+      <button data-cat="Private Equity">Private Equity</button>
+      <button data-cat="Real Estate">Real Estate</button>
+    </div>
+  </div>
+  <div id="news"></div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-logo">Neman Capital</span>
+    <div class="footer-links">
+      <a href="https://ryda.us/" target="_blank">RYDA Ventures</a>
+      <a href="https://sunsetrow.com/" target="_blank">Sunset Row</a>
+      <a href="https://www.sweetgreen.com/" target="_blank">Sweetgreen</a>
+      <a href="https://www.loquatcoffee.com/" target="_blank">Loquat Coffee</a>
+    </div>
+    <span class="footer-copy">© 2026 Neman Capital LLC</span>
+  </div>
+</footer>
+
+<script>
+// Edit this list (same shape as news.json) to add or remove items. Display order is set by the "order" field (lowest first); dates do not re-sort.
+const NEWS = [{"headline": "Sweetgreen introduces a $200,000-plus incentive plan for restaurant managers", "date": "2026-10-27", "category": "Venture", "company": "Sweetgreen", "takeaway": "Top Head Coaches can earn salary, revenue share and equity as the chain nears 300 locations.", "source": "QSR Magazine", "url": "https://www.qsrmagazine.com/story/sweetgreen-introduces-incentive-plan-with-200000-plus-potential-for-restaurant-managers/", "order": 1}, {"headline": "LA Times names Quat among LA's best places for coffee", "date": "2026-10-23", "category": "Private Equity", "company": "Quat", "takeaway": "The Glassell Park coffee compound makes the Times' 2026 guide to the city's best drinks.", "source": "Los Angeles Times", "url": "https://www.latimes.com/food/list/best-places-drink-cocktails-coffee-los-angeles-guide-2026", "order": 2}, {"headline": "Mach Industries doubles its valuation to $3.7B in three months", "date": "2026-09-10", "category": "Venture", "company": "Mach Industries", "takeaway": "A Series C extension follows June's $300M round as demand for its defense systems grows.", "source": "TechCrunch", "url": "https://techcrunch.com/2026/09/10/defense-tech-mach-industries-doubles-valuation-to-3-7b-in-3-months/", "order": 3}, {"headline": "Sweetgreen names John Karangis Executive Chef and SVP, Culinary", "date": "2026-10-22", "category": "Venture", "company": "Sweetgreen", "takeaway": "The former Shake Shack culinary chief will lead menu innovation and the core menu.", "source": "Business Wire", "url": "https://www.businesswire.com/news/home/20261022699415/en/Sweetgreen-Names-John-Karangis-Executive-Chef-and-SVP-Culinary", "order": 4}, {"headline": "Polymarket raises $1B at a $21B valuation", "date": "2026-09-01", "category": "Venture", "company": "Polymarket", "takeaway": "1789 Capital leads; the valuation is up about 40% from earlier in the year.", "source": "CoinDesk", "url": "https://www.coindesk.com/business/2026/09/01/trump-jr-s-firm-leads-usd1-billion-polymarket-raise-at-usd21-billion-value-report", "order": 5}, {"headline": "Sweetgreen finds more ways to grow", "date": "2026-10-12", "category": "Venture", "company": "Sweetgreen", "takeaway": "Six openings in about 60 days, including the first East Coast sweetlane drive-thru and Mall of America.", "source": "QSR Magazine", "url": "https://www.qsrmagazine.com/story/sweetgreen-finds-more-ways-to-grow/", "order": 6}, {"headline": "Starcloud raises $250M to build orbital data centers", "date": "2026-08-21", "category": "Venture", "company": "Starcloud", "takeaway": "The space-compute startup is now valued at $2.3 billion and is scaling spacecraft production.", "source": "TechCrunch", "url": "https://techcrunch.com/2026/08/21/starcloud-raises-200-million-for-orbital-data-centers-as-launch-options-dry-up/", "order": 7}, {"headline": "Reese Cooper opens his first store at Sunset Row", "date": "2026-08-14", "category": "Real Estate", "company": "Sunset Row", "takeaway": "RC Outdoor Supply's first permanent shop, an 806-square-foot space at 3300 Sunset.", "source": "WWD", "url": "https://wwd.com/business-news/retail/reese-cooper-first-store-los-angeles-1239125296/", "order": 8}, {"headline": "Neros raises a $250M Series C at a $2.5B valuation", "date": "2026-08-11", "category": "Venture", "company": "Neros", "takeaway": "Capital to scale autonomous and interceptor drone programs.", "source": "Neros", "url": "https://www.neros.tech/articles/neros-raises-250m-series-c-at-2-5b-valuation-to-scale-autonomous-and-interceptor-drone-programs", "order": 9}, {"headline": "Eater: Kumquat, Loquat and Quat form LA's most ambitious coffee empire", "date": "2026-06-30", "category": "Private Equity", "company": "Quat", "takeaway": "Eater LA's review praises the collective, from the Quat compound to Loquat's signature mascarpone latte.", "source": "Eater LA", "url": "https://la.eater.com/dining-report/304614/quat-loquat-kumquat-los-angeles-review", "order": 10}, {"headline": "SpaceX closes past $2 trillion in record Nasdaq debut", "date": "2026-06-12", "category": "Venture", "company": "SpaceX", "takeaway": "The largest IPO ever priced at $135 a share and closed its first day near $161 under SPCX.", "source": "CNBC", "url": "https://www.cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates.html", "order": 11}, {"headline": "Prometheus raises $12B to build an artificial general engineer", "date": "2026-06-11", "category": "Venture", "company": "Prometheus", "takeaway": "Jeff Bezos and Vik Bajaj's lab targets AI for designing and manufacturing physical products.", "source": "TechCrunch", "url": "https://techcrunch.com/2026/06/11/jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-general-engineer-for-the-physical-world/", "order": 12}, {"headline": "Anthropic raises $65B Series H at a $965B valuation", "date": "2026-05-28", "category": "Venture", "company": "Anthropic", "takeaway": "Claude's maker overtakes OpenAI in value, with run-rate revenue above $47 billion.", "source": "Anthropic", "url": "https://www.anthropic.com/news/series-h", "order": 13}, {"headline": "Anduril raises $5B, doubling its valuation to $61B", "date": "2026-05-13", "category": "Venture", "company": "Anduril", "takeaway": "Thrive and a16z lead a round funding manufacturing and autonomous systems.", "source": "Anduril", "url": "https://www.anduril.com/news/anduril-announces-usd5b-series-h-raise", "order": 14}, {"headline": "Wallpaper* reviews Bar di Bello at Sunset Row", "date": "2026-05-03", "category": "Real Estate", "company": "Sunset Row", "takeaway": "The design magazine calls the Milanese newcomer a seductive addition to Silver Lake.", "source": "Wallpaper*", "url": "https://www.wallpaper.com/travel/restaurants/bar-di-bello-los-angeles-review", "order": 15}, {"headline": "Kenangan Coffee opens its first store in Taiwan", "date": "2026-04-15", "category": "Venture", "company": "Kopi Kenangan", "takeaway": "The Indonesian coffee brand enters its latest market, with more than 1,400 outlets worldwide.", "source": "Marketech APAC", "url": "https://marketech-apac.com/indonesian-brand-kenangan-coffee-expands-global-footprint-with-taiwan-launch/", "order": 16}, {"headline": "Noma Projects opens its first U.S. shop at Sunset Row", "date": "2026-04-10", "category": "Real Estate", "company": "Sunset Row", "takeaway": "The Copenhagen restaurant's design and pantry shop opened at 3300 Sunset alongside its Los Angeles residency.", "source": "Noma", "url": "https://noma.dk/noma-projects-shop-los-angeles/", "order": 17}, {"headline": "A buzzy Milanese-style restaurant lands in Silver Lake", "date": "2026-04-06", "category": "Real Estate", "company": "Sunset Row", "takeaway": "Bar di Bello brings aperitivo and late-night dining to the Sunset Row courtyard.", "source": "Eater LA", "url": "https://la.eater.com/los-angeles-restaurant-news/301320/bar-di-bello-opening-silver-lake-sunset-row", "order": 18}, {"headline": "OpenAI closes a $122B round at an $852B valuation", "date": "2026-03-31", "category": "Venture", "company": "OpenAI", "takeaway": "Silicon Valley's largest-ever private round, anchored by Amazon, Nvidia and SoftBank.", "source": "CNBC", "url": "https://www.cnbc.com/2026/03/31/openai-funding-round-ipo.html", "order": 19}, {"headline": "Kumquat's Esther Kim wins the 2026 U.S. Brewers Cup", "date": "2026-03-30", "category": "Private Equity", "company": "Kumquat", "takeaway": "Quat's lead brewer took first place at the national championship in Raleigh.", "source": "Sprudge", "url": "https://sprudge.com/here-are-the-winners-of-the-2026-us-brewers-cup-and-cup-tasters-events-842273.html", "order": 20}, {"headline": "Anthropic raises $30B Series G at a $380B valuation", "date": "2026-02-12", "category": "Venture", "company": "Anthropic", "takeaway": "GIC and Coatue lead a round fueling research, products and infrastructure for Claude.", "source": "Anthropic", "url": "https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation", "order": 21}, {"headline": "SpaceX acquires xAI, forming a $1.25 trillion company", "date": "2026-02-02", "category": "Venture", "company": "xAI", "takeaway": "Musk combines his rocket and AI companies; xAI holders receive SpaceX shares.", "source": "Reuters", "url": "https://www.reuters.com/business/musks-spacex-merge-with-xai-combined-valuation-125-trillion-bloomberg-news-2026-02-02/", "order": 22}, {"headline": "Linq raises $20M to bring AI assistants into messaging apps", "date": "2026-02-02", "category": "Venture", "company": "Linq", "takeaway": "A Series A led by TQ Ventures for AI that lives inside iMessage, RCS and SMS.", "source": "TechCrunch", "url": "https://techcrunch.com/2026/02/02/linq-raises-20m-to-enable-ai-assistants-to-live-within-messaging-apps/", "order": 23}, {"headline": "Listen Labs raises a $69M Series B", "date": "2026-01-14", "category": "Venture", "company": "Listen Labs", "takeaway": "Ribbit Capital leads as the AI customer-research platform reaches $100M raised.", "source": "Yahoo Finance", "url": "https://finance.yahoo.com/news/listen-labs-raises-69-million-150000650.html", "order": 24}, {"headline": "L Catterton makes a majority investment in Good Culture", "date": "2026-01-08", "category": "Venture", "company": "Good Culture", "takeaway": "Sales have nearly quadrupled in three years, and the deal positions the cottage-cheese brand for national expansion.", "source": "Kirkland & Ellis", "url": "https://www.kirkland.com/news/press-release/2026/01/kirkland-advises-l-catterton-on-majority-investment-in-good-culture", "order": 25}, {"headline": "Loquat opens its second café at Sunset Row", "date": "2025-12-11", "category": "Private Equity", "company": "Loquat", "takeaway": "A Milanese-inspired espresso bar by 22RE, set inside a restored 1930s Art Deco garage in Silver Lake.", "source": "Superfuture", "url": "https://superfuture.com/2025/12/new-restaurants-bars/los-angeles-loquat-cafe-opening/", "order": 26}, {"headline": "Sweetgreen announces strategic sale of Spyce to Wonder", "date": "2025-11-06", "category": "Venture", "company": "Sweetgreen", "takeaway": "The Infinite Kitchen business joins Wonder for cash and stock, and the technology stays in Sweetgreen restaurants.", "source": "Business Wire", "url": "https://www.businesswire.com/news/home/20251106759339/en/Sweetgreen-Announces-Strategic-Sale-of-Spyce-to-Wonder", "order": 27}, {"headline": "Quat opens its coffee compound in Glassell Park", "date": "2025-10-24", "category": "Private Equity", "company": "Quat", "takeaway": "A 3,500-square-foot roastery, cafe, retail space and Atelier Q omakase tasting room from the Kumquat and Loquat team.", "source": "Eater LA", "url": "https://la.eater.com/restaurant-openings/294205/quat-kumquat-coffee-glassell-park-opening-retail-korean-wave", "order": 28}, {"headline": "Oura raises $900M led by Fidelity at about $11B", "date": "2025-10-14", "category": "Venture", "company": "Oura Ring", "takeaway": "The valuation more than doubled in under a year as sales head past $1 billion.", "source": "TechCrunch", "url": "https://techcrunch.com/2025/10/14/smart-ring-maker-oura-raises-900m-from-fidelity/", "order": 29}, {"headline": "Mysa brings 74 new apartments to Silver Lake", "date": "2025-08-05", "category": "Real Estate", "company": "RYDA", "takeaway": "RYDA's five-story building at 3004 Sunset replaces a parking lot with homes, a courtyard and a roof deck.", "source": "LA YIMBY", "url": "https://layimby.com/2025/08/mysa-brings-74-new-apartments-to-3004-sunset-boulevard-in-silver-lake.html", "order": 30}, {"headline": "RYDA acquires 3123 West Sunset Boulevard", "date": "2024-12-30", "category": "Real Estate", "company": "RYDA", "takeaway": "A 9,127-square-foot mixed-use building joins RYDA's Silver Lake portfolio.", "source": "Traded", "url": "https://traded.co/deals/california/mixed-use/sale/3123-west-sunset-boulevard/", "order": 31}, {"headline": "AKILA opens its Los Angeles flagship at Sunset Row", "date": "2024-05-31", "category": "Real Estate", "company": "Sunset Row", "takeaway": "The eyewear brand's first LA store opens at 3300 Sunset.", "source": "AKILA", "url": "https://akila.la/pages/akila-la-opening-weekend", "order": 32}, {"headline": "Silver Lake's Sunset Row nears opening", "date": "2024-04-15", "category": "Real Estate", "company": "Sunset Row", "takeaway": "Design wraps on 3300 Sunset, a 19,100-square-foot mixed-use building of shops and restaurants.", "source": "Los Angeles Business Journal", "url": "https://labusinessjournal.com/real-estate/silver-lake-projects-nears-opening/", "order": 33}, {"headline": "Sunspel opens its first Los Angeles store at Sunset Row", "date": "2024-03-15", "category": "Real Estate", "company": "Sunset Row", "takeaway": "The British luxury label chose Silver Lake for its first LA location.", "source": "Sunset Row", "url": "https://www.sunsetrow.com/the-latest/article-2-brit-luxe-brand-sunspel-opens-us-store-in-silver-lake", "order": 34}, {"headline": "Sunset Row announces eight incoming tenants", "date": "2023-11-29", "category": "Real Estate", "company": "Sunset Row", "takeaway": "New Balance, Baggu, Filson, Malin + Goetz, Sunspel and more sign on at 3210 and 3300 Sunset.", "source": "Sunset Row", "url": "https://www.sunsetrow.com/the-latest/article-4-sunset-row-retail-development-announces-8-incoming-tenants-in-silver-lake", "order": 35}, {"headline": "Death & Co. opens at 3rd & Traction in the Arts District", "date": "2019-12-27", "category": "Real Estate", "company": "3rd & Traction", "takeaway": "The celebrated New York cocktail bar brings its first LA outpost to RYDA's Arts District project.", "source": "Time Out", "url": "https://www.timeout.com/los-angeles/news/death-co-los-angeles-is-now-open-bringing-some-of-nycs-most-famous-cocktails-to-the-arts-district-122719", "order": 36}, {"headline": "Mexico City's Terraza Cha Cha Cha signs on at 3rd & Traction", "date": "2019-08-22", "category": "Real Estate", "company": "3rd & Traction", "takeaway": "The rooftop favorite chose RYDA's Arts District project for its first U.S. location.", "source": "Commercial Observer", "url": "https://commercialobserver.com/2019/08/mexico-citys-terraza-cha-cha-cha-coming-to-las-arts-district/", "order": 37}, {"headline": "RYDA plans a 104-unit live-work project in Silver Lake", "date": "2019-04-03", "category": "Real Estate", "company": "RYDA", "takeaway": "RYDA files plans for a mixed-use live-work building on its Sunset Junction site.", "source": "The Real Deal", "url": "https://therealdeal.com/la/2019/04/03/ryda-ventures-plans-live-work-development-in-silver-lake/", "order": 38}, {"headline": "RYDA sells the historic Pettebone Building for $22M", "date": "2019-01-24", "category": "Real Estate", "company": "RYDA", "takeaway": "NHN Global buys the downtown LA building and moves its headquarters there.", "source": "Los Angeles Business Journal", "url": "https://labusinessjournal.com/real-estate/pettebone-building-bought-22-million/", "order": 39}, {"headline": "RYDA acquires a Sunset Junction retail strip for $7.8M", "date": "2016-05-26", "category": "Real Estate", "company": "RYDA", "takeaway": "RYDA buys a retail strip at Sunset Junction, laying the groundwork for its Silver Lake portfolio.", "source": "The Real Deal", "url": "https://therealdeal.com/la/2016/05/26/church-sells-silver-lake-retail-strip-to-hip-developer-for-7-8m/", "order": 40}];
+const nav = document.getElementById('nav');
+
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let cat = 'All';
+function render() {
+  const list = NEWS.filter(n => (cat === 'All' || n.category === cat))
+                   .sort((a, b) => a.order - b.order);
+  let out = '', last = '', lastIdx = Infinity;
+  list.forEach(n => {
+    const [y, m, d] = n.date.split('-').map(Number);
+    const mk = MONTHS[m-1] + ' ' + y;
+    const idx = y*12 + m; if (mk !== last && idx < lastIdx) { out += '<p class="news-month">' + mk + '</p>'; last = mk; lastIdx = idx; }
+    out += '<a class="news-item" href="' + esc(n.url) + '" target="_blank" rel="noopener">' +
+      '<span class="news-date">' + MONTHS[m-1].slice(0,3) + ' ' + d + ', ' + y + '</span>' +
+      '<div><p class="news-meta">' + esc(n.category) + '<span>/</span>' + esc(n.company) + '</p>' +
+      '<h3>' + esc(n.headline) + '</h3><p>' + esc(n.takeaway) + '</p></div>' +
+      '<span class="news-src">' + esc(n.source) + '</span></a>';
+  });
+  document.getElementById('news').innerHTML = out || '<p class="news-empty">Nothing here yet.</p>';
+}
+document.querySelectorAll('.news-tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.news-tabs button').forEach(x => x.classList.remove('active'));
+  b.classList.add('active'); cat = b.dataset.cat; render();
+}));
+render();
+</script>
+</body></html>
