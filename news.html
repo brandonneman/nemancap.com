@@ -136,7 +136,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
       <button data-cat="Private Equity">Private Equity</button>
       <button data-cat="Real Estate">Real Estate</button>
     </div>
-    <select class="news-select" id="company" aria-label="Filter by company"><option value="">All companies</option></select>
   </div>
   <div id="news"></div>
 </main>
@@ -161,11 +160,9 @@ const nav = document.getElementById('nav');
 
 const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let cat = 'All', co = '';
-const sel = document.getElementById('company');
-[...new Set(NEWS.map(n => n.company))].sort().forEach(c => sel.add(new Option(c, c)));
+let cat = 'All';
 function render() {
-  const list = NEWS.filter(n => (cat === 'All' || n.category === cat) && (!co || n.company === co))
+  const list = NEWS.filter(n => (cat === 'All' || n.category === cat))
                    .sort((a, b) => a.order - b.order);
   let out = '', last = '', lastIdx = Infinity;
   list.forEach(n => {
@@ -184,7 +181,6 @@ document.querySelectorAll('.news-tabs button').forEach(b => b.addEventListener('
   document.querySelectorAll('.news-tabs button').forEach(x => x.classList.remove('active'));
   b.classList.add('active'); cat = b.dataset.cat; render();
 }));
-sel.addEventListener('change', () => { co = sel.value; render(); });
 render();
 </script>
 </body></html>
